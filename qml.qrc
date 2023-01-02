@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/ButtonBig.qml</file>
+        <file>qml/Database.js</file>
+        <file>qml/GameScores.qml</file>
+        <file>qml/GamesList.qml</file>
+        <file>qml/main.qml</file>
+        <file>qml/PlayerEdit.qml</file>
+        <file>qml/PlayerSelect.qml</file>
+        <file>qml/ScoreEdit.qml</file>
+        <file>qml/MakePhoto.qml</file>
+        <file>qml/ColorSelect.qml</file>
+        <file>qml/default-player_photo.png</file>
+        <file>qml/ButtonScore.qml</file>
+        <file>qml/default-score_photo.png</file>
+    </qresource>
+</RCC>
