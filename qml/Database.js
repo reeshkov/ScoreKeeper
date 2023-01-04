@@ -1,7 +1,7 @@
 .pragma library
 .import QtQuick.LocalStorage 2.0 as Sql
 
-var db = Sql.LocalStorage.openDatabaseSync("CarcassonneDB", "1.0", "Database for Carcassonne game score board", 100000000);
+var db = Sql.LocalStorage.openDatabaseSync("scorekeeperdb", "1.0", "Database for game score board", 100000000);
 
 function init() {
     console.log("init db");
@@ -12,14 +12,12 @@ function init() {
                 "player_name" TEXT NOT NULL , \
                 "player_color" INTEGER NOT NULL DEFAULT 0, \
                 "player_photo" TEXT NOT NULL DEFAULT "qrc:/qml/default-player_photo.png", \
-                "global_id" TEXT UNIQUE  DEFAULT CURRENT_TIMESTAMP, \
                 "deleted" BOOL NOT NULL DEFAULT 0);');
             tx.executeSql('CREATE TABLE IF NOT EXISTS "games"   ( \
                 "game_id" INTEGER PRIMARY KEY  AUTOINCREMENT UNIQUE , \
                 "comments" TEXT DEFAULT CURRENT_TIMESTAMP, \
                 "started" DATETIME DEFAULT CURRENT_TIMESTAMP, \
                 "finished" DATETIME, \
-                "global_id" TEXT UNIQUE  DEFAULT CURRENT_TIMESTAMP, \
                 "final_photo" TEXT , \
                 "deleted" BOOL NOT NULL DEFAULT 0);');
             tx.executeSql('CREATE TABLE IF NOT EXISTS "scores"  ( \
@@ -55,7 +53,7 @@ function init() {
 }
 
 function getPlayers() {
-    var records = []
+    var records = [];
 
     db.transaction(
         function(tx) {
@@ -68,7 +66,7 @@ function getPlayers() {
         }
     );
 
-    return records
+    return records;
 }
 function addPlayer(name,color,avatar) {
     db.transaction(
