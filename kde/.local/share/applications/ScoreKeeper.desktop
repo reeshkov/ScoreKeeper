@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ScoreKeeper
+Exec=~/ScoreKeeper
+Icon=~/scorekeeper.png
+Type=Application
+Terminal=false
+StartupNotify=false
+SingleMainWindow=true

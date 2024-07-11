@@ -8,7 +8,7 @@ SOURCES += main.cpp
 RESOURCES += qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
+QML_IMPORT_PATH = "$$_PRO_FILE_PWD_/qml"
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
